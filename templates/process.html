@@ -1,0 +1,276 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{title}}</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+ 
+  
+</head>
+
+<body>
+
+<p></p>
+<table align="center" border="0">
+	<tr>
+		
+		<td colspan="3" align="center">
+		{% if act=="2" %}
+		<h4 style="color:#0000CC">Signal C</h4>
+		<img src="../static/process3/{{fnn[2]}}" width="300" height="300">
+		<br>Count:{{fc[2]}}
+		{% else %}
+		<h4 style="color:#0000CC">Signal C</h4>
+		<img src="../static/vehicle/{{fnn[2]}}" width="300" height="300">
+		{% endif %}
+		</td>
+		
+	</tr>
+	
+	
+	<tr>
+		<td align="right">
+		{% if act=="2" %}
+		<h4 style="color:#0000CC">Signal A</h4>
+		<img src="../static/process3/{{fnn[0]}}" width="300" height="300">
+		<br>Count:{{fc[0]}}
+		{% else %}
+		<h4 style="color:#0000CC">Signal A</h4>
+		<img src="../static/vehicle/{{fnn[0]}}" width="300" height="300">
+		{% endif %}
+		</td>
+		<td>
+		
+		<table border="0">
+			<tr>
+			<td></td>
+			<td>
+			{% if signal3=="C" %}
+			<img src="../static/images/sh2.jpg">
+			{% elif signal3=="C1" %}
+			<img src="../static/images/sh3.jpg">
+			{% else %}
+			<img src="../static/images/sh1.jpg">
+			{% endif %}
+			</td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<td>
+			{% if signal1=="A" %}
+			<img src="../static/images/sv2.jpg">
+			{% elif signal1=="A1" %}
+			<img src="../static/images/sv3.jpg">
+			{% else %}
+			<img src="../static/images/sv1.jpg">
+			{% endif %}
+			</td>
+			<td align="center">
+			{% if act=="1" %}
+				
+				<h3>Detect Vehicles</h3>
+			{% elif act=="2" %}
+				{% if page=="1" %}
+					
+				{% elif page=="2" %}
+				<h3>Signal: {{signal}}</h3>
+				
+				{% endif %}
+			{% endif %}
+			</td>
+			<td>
+			
+			{% if signal2=="B" %}
+			<img src="../static/images/sv2.jpg">
+			{% elif signal2=="B1" %}
+			<img src="../static/images/sv3.jpg">
+			{% else %}
+			<img src="../static/images/sv1.jpg">
+			{% endif %}
+			
+			</td>
+			</tr>
+			
+			<tr>
+			<td></td>
+			<td>
+		
+			{% if signal4=="D" %}
+			<img src="../static/images/sh2.jpg">
+			{% elif signal4=="D1" %}
+			<img src="../static/images/sh3.jpg">
+			{% else %}
+			<img src="../static/images/sh1.jpg">
+			{% endif %}
+			
+			</td>
+			<td></td>
+			</tr>
+		
+		</table>
+		</td>
+		<td align="left">
+		
+		{% if act=="2" %}
+		<h4 style="color:#0000CC">Signal B</h4>
+		<img src="../static/process3/{{fnn[1]}}" width="300" height="300">
+		<br>Count:{{fc[1]}}
+		{% else %}
+		<h4 style="color:#0000CC">Signal B</h4>
+		<img src="../static/vehicle/{{fnn[1]}}" width="300" height="300">
+		{% endif %}
+		</td>
+	</tr>
+	
+	<tr>
+		
+		<td colspan="3" align="center">
+		
+		{% if act=="2" %}
+		<h4 style="color:#0000CC">Signal D</h4>
+		<img src="../static/process3/{{fnn[3]}}" width="300" height="300">
+		<br>Count:{{fc[3]}}
+		{% else %}
+		<h4 style="color:#0000CC">Signal D</h4>
+		<img src="../static/vehicle/{{fnn[3]}}" width="300" height="300">
+		{% endif %}
+		</td>
+		
+	</tr>
+<tr>
+
+</tr>
+</table>
+
+
+{% if act=="1" %}
+	
+	<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=1';
+	}, 5000);
+	</script>
+
+
+{% elif act=="2" %}
+
+	{% if page=="1" %}
+	
+	<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=2&sgn=1';
+	}, 5000);
+	</script>
+	
+	{% elif page=="2" %}
+			{% if sgn=="1"%}
+			<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=2&sg=2&signal={{signal}}&sgn=2';
+	}, 5000);
+	</script>
+			{% elif sgn=="2"%}
+			<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=2&sg=3&signal={{signal}}&sgn=3';
+	}, 5000);
+	</script>
+			{% elif sgn=="3"%}
+			<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=2&sg=4&signal={{signal}}&sgn=4';
+	}, 5000);
+	</script>
+			
+			{% elif sgn=="4"%}
+			<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process';
+	}, 5000);
+	</script>
+			{% else %}
+		<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=2';
+	}, 5000);
+	</script>
+			{% endif %}
+	{% else %}
+		<script>
+	//Using setTimeout to execute a function after 5 seconds.
+	setTimeout(function () {
+	   //Redirect with JavaScript
+	   window.location.href= '/process?act=2&page=1';
+	}, 5000);
+	</script>
+	
+	{% endif %}
+
+{% else %}
+
+<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/process?act=1';
+}, 5000);
+</script>
+{% endif %}
+  <p>
+    <!-- ======= Footer ======= -->
+  </p>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
